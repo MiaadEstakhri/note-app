@@ -1,0 +1,9 @@
+.newComment {
+  width: 30%;
+  /* height: 200px; */
+  background: #fee2e2;
+}
+
+input, textarea{
+    outline: none;
+}
