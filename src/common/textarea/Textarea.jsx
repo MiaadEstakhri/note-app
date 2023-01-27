@@ -1,7 +1,5 @@
 const Textarea = () => {
-  return (
-    <fieldset>
-      <textarea rows="" cols=""></textarea>
-    </fieldset>
-  );
+  return <textarea rows="" cols=""></textarea>;
 };
+
+export default Textarea;
