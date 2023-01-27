@@ -2,7 +2,7 @@ import NewComment from "./../../components/newComment/NewComment";
 
 const Discussion = () => {
   return (
-    <main>
+    <main className="mx-4">
       <section>nav</section>
       <section>
         <NewComment />
