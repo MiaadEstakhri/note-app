@@ -1,9 +1,5 @@
 const Input = ({ title }) => {
-  return (
-    <fieldset>
-      <input type="text" />
-    </fieldset>
-  );
+  return <input type="text" />;
 };
 
 export default Input;
