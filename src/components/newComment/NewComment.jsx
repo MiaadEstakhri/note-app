@@ -6,7 +6,7 @@ const NewComment = () => {
   return (
     <form className="w-100 d-flex justify-content-end">
       <fieldset
-        className={`newComment d-flex flex-column justify-content-center align-items-center p-3`}
+        className={`newComment d-flex flex-column justify-content-center align-items-center p-3 shadow rounded-3`}
       >
         <Input />
         <Textarea />

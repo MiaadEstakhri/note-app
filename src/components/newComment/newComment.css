@@ -1,9 +1,10 @@
 .newComment {
-  width: 30%;
+  width: 40%;
   /* height: 200px; */
   background: #fee2e2;
 }
 
-input, textarea{
-    outline: none;
+input,
+textarea {
+  outline: none;
 }
