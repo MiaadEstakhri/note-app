@@ -1,6 +1,4 @@
-import "./comments.css";
-
-const Comments = ({ title, des, background }) => {
+const Comment = ({ background, title, des }) => {
   return (
     <div
       className="comments w-100 mb-4 text-start p-3 shadow rounded-3"
@@ -12,4 +10,4 @@ const Comments = ({ title, des, background }) => {
   );
 };
 
-export default Comments;
+export default Comment;

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewComment from "./../../components/newComment/NewComment";
-import Comments from "./../../components/comment/Comments";
+import CommentList from "../../components/commentList/CommentList";
 
 const note = [
   {
@@ -55,7 +55,10 @@ const note = [
 
 const Discussion = () => {
   const [comments, setComments] = useState(note);
-
+  // useEffect(() => {
+  //   const item = JSON.parse(localStorage.getItem("data"));
+  //   setComments([comments, item]);
+  // }, []);
   const addHandler = (input, textarea) => {
     const newComment = {
       id: Math.floor(Math.random() * 1000),
@@ -63,6 +66,7 @@ const Discussion = () => {
       des: textarea,
     };
     setComments([...comments, newComment]);
+    localStorage.setItem("data", JSON.stringify(comments));
   };
 
   return (
@@ -72,18 +76,7 @@ const Discussion = () => {
         <NewComment addHandler={addHandler} />
       </section>
       <section className="box-comments w-100 gap-4 mt-4 ">
-        {comments ? (
-          comments.map((c) => (
-            <Comments
-              key={c.id}
-              title={c.title}
-              des={c.des}
-              background={c.background}
-            />
-          ))
-        ) : (
-          <p>loading...</p>
-        )}
+        <CommentList comments={comments}  />
       </section>
     </main>
   );
