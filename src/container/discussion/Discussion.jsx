@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NewComment from "./../../components/newComment/NewComment";
 import CommentList from "../../components/commentList/CommentList";
+import Navigation from "../../components/navigation/Navigation";
 
 const note = [
   {
@@ -55,10 +56,7 @@ const note = [
 
 const Discussion = () => {
   const [comments, setComments] = useState(note);
-  // useEffect(() => {
-  //   const item = JSON.parse(localStorage.getItem("data"));
-  //   setComments([comments, item]);
-  // }, []);
+
   const addHandler = (input, textarea) => {
     const newComment = {
       id: Math.floor(Math.random() * 1000),
@@ -68,17 +66,29 @@ const Discussion = () => {
     setComments([...comments, newComment]);
     localStorage.setItem("data", JSON.stringify(comments));
   };
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("data"));
+    // setComments([comments, item]);
+    item.push();
+  }, []);
+
+  const removeHandler = (id) => {
+    const remove = comments.filter((e) => e.id !== id);
+    setComments(remove);
+  };
 
   return (
-    <main className="mx-4">
-      <section>nav</section>
-      <section className="box-newComments me-5">
-        <NewComment addHandler={addHandler} />
-      </section>
-      <section className="box-comments w-100 gap-4 mt-4 ">
-        <CommentList comments={comments}  />
-      </section>
-    </main>
+    <div>
+      <Navigation />
+      <main className="mx-4">
+        <section className="box-newComments me-5">
+          <NewComment addHandler={addHandler} />
+        </section>
+        <section className="box-comments w-100 gap-4 mt-4 ">
+          <CommentList comments={comments} removeHandler={removeHandler} />
+        </section>
+      </main>
+    </div>
   );
 };
 

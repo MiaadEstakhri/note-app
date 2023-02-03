@@ -1,4 +1,4 @@
-const Comment = ({ background, title, des }) => {
+const Comment = ({ background, title, des, onClick }) => {
   return (
     <div
       className="comments w-100 mb-4 text-start p-3 shadow rounded-3"
@@ -6,6 +6,11 @@ const Comment = ({ background, title, des }) => {
     >
       <h3>{title}</h3>
       <p className="">{des}</p>
+      <div className="w-100 d-flex justify-content-end">
+        <button onClick={onClick} className=" ">
+          delete
+        </button>
+      </div>
     </div>
   );
 };
