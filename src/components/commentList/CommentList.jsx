@@ -3,7 +3,11 @@ import Comment from "../comment/Comment";
 
 const CommentList = ({ comments, removeHandler }) => {
   if (comments.length === 0) {
-    return <h4>Not Comment</h4>;
+    return (
+      <div className="w-100 d-flex justify-content-center  align-items-center my-3">
+        <h4 className="">Not Comment</h4>
+      </div>
+    );
   }
   return comments.map((e) => {
     return (
