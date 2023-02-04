@@ -55,7 +55,7 @@ const note = [
 ];
 
 const Discussion = () => {
-  const [comments, setComments] = useState(note);
+  const [comments, setComments] = useState([]);
 
   const addHandler = (input, textarea) => {
     const newComment = {
@@ -64,25 +64,32 @@ const Discussion = () => {
       des: textarea,
     };
     setComments([...comments, newComment]);
-    localStorage.setItem("data", JSON.stringify(comments));
   };
-  useEffect(() => {
-    const item = JSON.parse(localStorage.getItem("data"));
-    // setComments([comments, item]);
-    item.push();
-  }, []);
 
   const removeHandler = (id) => {
     const remove = comments.filter((e) => e.id !== id);
     setComments(remove);
   };
 
+  useEffect(() => {
+    const saveComments = JSON.parse(localStorage.getItem("comment"));
+    if (saveComments) setComments(saveComments);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("comment", JSON.stringify(comments));
+  }, [comments]);
+
   return (
     <div>
       <Navigation />
       <main className="mx-4">
         <section className="box-newComments me-5">
-          <NewComment addHandler={addHandler} />
+          <NewComment
+            addHandler={addHandler}
+            comments={comments}
+            setComments={setComments}
+          />
         </section>
         <section className="box-comments w-100 gap-4 mt-4 ">
           <CommentList comments={comments} removeHandler={removeHandler} />
