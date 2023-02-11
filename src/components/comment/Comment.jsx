@@ -1,8 +1,8 @@
-const Comment = ({ background, title, des, onClick }) => {
+const Comment = ({ bg, title, des, onClick }) => {
   return (
     <div
       className="comments w-100 mb-4 text-start p-3 shadow rounded-3"
-      style={{ background: background }}
+      style={{ background: bg }}
     >
       <h3>{title}</h3>
       <p className="">{des}</p>

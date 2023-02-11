@@ -1,12 +1,13 @@
+import { useState } from "react";
 import Input from "../../common/input/Input";
 import Textarea from "../../common/textarea/Textarea";
+import SidebarBg from "../sidebarBg/SidebarBg";
 import "./newComment.css";
-import { useState } from "react";
 
 const NewComment = ({ addHandler }) => {
   const [input, setInput] = useState("");
   const [textarea, setTextarea] = useState("");
-
+  const [bg, setBg] = useState("");
   const inputHandler = (e) => {
     const value = e.target.value;
     setInput(value);
@@ -19,9 +20,10 @@ const NewComment = ({ addHandler }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    addHandler(input, textarea);
+    addHandler(input, textarea, bg);
     setInput("");
     setTextarea("");
+    setBg("");
   };
 
   return (
@@ -34,7 +36,12 @@ const NewComment = ({ addHandler }) => {
       >
         <Input onChange={inputHandler} value={input} />
         <Textarea onChange={areaHandler} value={textarea} />
-        <button type="submit">add</button>
+        <div className="d-flex ">
+          <SidebarBg bg={bg} setBg={setBg} />
+          <button className="mx-5" type="submit">
+            add
+          </button>
+        </div>
       </fieldset>
     </form>
   );

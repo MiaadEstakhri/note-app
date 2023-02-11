@@ -57,11 +57,12 @@ const note = [
 const Discussion = () => {
   const [comments, setComments] = useState([]);
 
-  const addHandler = (input, textarea) => {
+  const addHandler = (input, textarea, bg) => {
     const newComment = {
       id: Math.floor(Math.random() * 1000),
       title: input,
       des: textarea,
+      bg: bg,
     };
     setComments([...comments, newComment]);
   };
@@ -72,14 +73,19 @@ const Discussion = () => {
   };
 
   useEffect(() => {
-    const saveComments = JSON.parse(localStorage.getItem("comment"));
+    const saveComments = JSON.parse(localStorage.getItem("comment")) || [];
     if (saveComments) setComments(saveComments);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("comment", JSON.stringify(comments));
-  }, [comments]);
-
+  useEffect(
+    (id) => {
+      if (comments.length) {
+        localStorage.setItem("comment", JSON.stringify(comments));
+      }
+    },
+    [comments]
+  );
+  console.log("comments", comments);
   return (
     <div>
       <Navigation />

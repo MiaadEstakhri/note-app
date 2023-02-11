@@ -15,7 +15,7 @@ const CommentList = ({ comments, removeHandler }) => {
         key={e.id}
         title={e.title}
         des={e.des}
-        background={e.background}
+        bg={e.bg || "#fee2e2"}
         onClick={() => removeHandler(e.id)}
       />
     );
