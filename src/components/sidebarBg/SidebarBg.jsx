@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ColorPalette from "../icon/ColorPalette";
 import "./sidebarBg.css";
 
 const color = [
@@ -16,7 +17,9 @@ const SidebarBg = ({ bg, setBg }) => {
 
   return (
     <div className="w-100 d-flex flex-column position-relative">
-      <span onClick={toggleOpen}>color</span>
+      <span onClick={toggleOpen}>
+        <ColorPalette width="30px" height="30px" fill="#71717a" />
+      </span>
       <div
         className={`sidebar d-flex flex-column position-absolute bg-white rounded-2 p-3 ${
           open ? "d-flex" : "d-none"

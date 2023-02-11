@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../../common/input/Input";
 import Textarea from "../../common/textarea/Textarea";
+import SaveIcon from "../icon/SaveIcon";
 import SidebarBg from "../sidebarBg/SidebarBg";
 import "./newComment.css";
 
@@ -38,8 +39,8 @@ const NewComment = ({ addHandler }) => {
         <Textarea onChange={areaHandler} value={textarea} />
         <div className="d-flex ">
           <SidebarBg bg={bg} setBg={setBg} />
-          <button className="mx-5" type="submit">
-            add
+          <button className="mx-4 " type="submit">
+            <SaveIcon width="30px" height="30px" fill=#71717a" />
           </button>
         </div>
       </fieldset>
