@@ -9,6 +9,8 @@ textarea {
   outline: none;
 }
 
-button{
-  
+button {
+  border: none;
+  outline: none;
+  background: #fee2e2;
 }
