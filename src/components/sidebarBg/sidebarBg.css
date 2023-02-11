@@ -1,0 +1,16 @@
+.box {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+span {
+  cursor: pointer;
+}
+
+.sidebar {
+  top: 35px;
+  right: 2px;
+  box-shadow: rgb(44, 62, 80) 0px -15px 15px -15px,
+    rgb(44, 62, 80) 0px 15px 15px -15px;
+}
