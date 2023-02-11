@@ -40,7 +40,7 @@ const NewComment = ({ addHandler }) => {
         <div className="d-flex ">
           <SidebarBg bg={bg} setBg={setBg} />
           <button className="mx-4 " type="submit">
-            <SaveIcon width="30px" height="30px" fill=#71717a" />
+            <SaveIcon width="30px" height="30px" fill="#71717a" />
           </button>
         </div>
       </fieldset>
