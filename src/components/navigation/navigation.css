@@ -1,4 +1,9 @@
-nav{
-    background-color: #facc15;
-    height: 55px;
+nav {
+  background-color: #facc15;
+  height: 55px;
+}
+
+li span {
+  width: 25px;
+  height: 25px;
 }
