@@ -9,7 +9,7 @@ const Comment = ({ bg, title, des, onClick }) => {
       <h3>{title}</h3>
       <p className="">{des}</p>
       <div className="w-100 d-flex justify-content-end bg-transparent">
-        <button onClick={onClick} className=" ">
+        <button onClick={onClick} className="bg-transparent ">
           <Delete width="20px" height="20px" fill="#71717a" />
         </button>
       </div>
