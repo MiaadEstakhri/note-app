@@ -1,9 +1,9 @@
 nav {
-  background-color: #facc15;
-  height: 55px;
+  background-color: #facc15d7;
+  /* height: 55px; */
 }
 
 li span {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
