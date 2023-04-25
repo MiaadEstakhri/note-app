@@ -9,13 +9,13 @@ const CommentList = ({ comments, removeHandler }) => {
       </div>
     );
   }
-  return comments.map((e) => {
+  return comments.map((e, index) => {
     return (
       <Comment
-        key={e.id}
+        key={index}
         title={e.title}
         des={e.des}
-        bg={e.bg || "#fee2e2"}
+        bg={e.bg || "#e7e5e4"}
         onClick={() => removeHandler(e.id)}
       />
     );

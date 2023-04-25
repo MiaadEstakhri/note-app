@@ -6,8 +6,7 @@ import "./sidebarBg.css";
 const SidebarBg = ({ bg, setBg }) => {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
-    setOpen(!open);
-    console.log(open);
+    setOpen((prev) => !prev);
   };
 
   return (
@@ -20,12 +19,15 @@ const SidebarBg = ({ bg, setBg }) => {
           open ? "d-flex" : "d-none"
         }`}
       >
-        {Color.map((e) => {
+        {Color.map((e, index) => {
           return (
-            <div className="d-flex" key={e.id}>
+            <div className="d-flex" key={index}>
               <div
                 value={bg}
-                onClick={() => setBg(e.color)}
+                onClick={() => {
+                  setBg(e.color);
+                  setOpen(false);
+                }}
                 className="box rounded-circle mx-2"
                 style={{ background: e.color }}
               ></div>
