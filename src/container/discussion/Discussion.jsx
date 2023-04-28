@@ -7,7 +7,6 @@ import Navigation from "../../components/navigation/Navigation";
 const Discussion = () => {
   const [comments, setComments] = useState([]);
   const [filterComments, setFilterComments] = useState([]);
-  console.log(comments);
 
   const addHandler = (input, textarea, bg, id) => {
     const newComment = {
@@ -19,22 +18,28 @@ const Discussion = () => {
     setComments([...comments, newComment]);
   };
   const removeHandler = (id) => {
-    console.log("ddddd", id);
     const removeComments = comments.filter((e) => e.id !== id);
     setComments(removeComments);
   };
 
   const filterToDo = () => {
     const updateColor = comments.filter((e) => e.bg === "#fee2e2");
-    setFilterComments(updateColor);
+    updateColor.length > 0
+      ? setFilterComments(updateColor)
+      : setFilterComments(filterComments);
   };
   const filterDoing = () => {
     const updateColor = comments.filter((e) => e.bg === "#d9f99d");
-    setFilterComments(updateColor);
+
+    updateColor.length > 0
+      ? setFilterComments(updateColor)
+      : setFilterComments(filterComments);
   };
   const filterDone = () => {
     const updateColor = comments.filter((e) => e.bg === "#bbf7d0");
-    setFilterComments(updateColor);
+    updateColor.length > 0
+      ? setFilterComments(updateColor)
+      : setFilterComments(filterComments);
   };
 
   const filterAll = () => {
@@ -57,29 +62,29 @@ const Discussion = () => {
   }, [comments]);
 
   return (
-    <div>
+    <main>
       <Navigation
         filterDoing={filterDoing}
         filterToDo={filterToDo}
         filterDone={filterDone}
         filterAll={filterAll}
       />
-      <main className="mx-4">
-        <section className="box-newComments me-5">
+      <section className="mx-4">
+        <div className="box-newComments me-5">
           <NewComment
             addHandler={addHandler}
             comments={comments}
             setComments={setComments}
           />
-        </section>
-        <section className="box-comments w-100 gap-4 mt-4 ">
+        </div>
+        <div className="box-comments w-100 gap-4 mt-4 ">
           <CommentList
             comments={filterComments.length ? filterComments : comments}
             removeHandler={removeHandler}
           />
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 };
 
