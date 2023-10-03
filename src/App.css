@@ -1,7 +1,28 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.box-comments {
-  column-count: 3;
+.comment {
+    max-width: 20rem;
+}
+
+.not-comment {
+    height: 50vh;
+}
+
+nav {
+    background-color: #facc15d7;
+}
+
+li span,
+nav span {
+    width: 30px;
+    height: 30px;
+}
+
+.title {
+    font-size: 1.2rem;
 }
