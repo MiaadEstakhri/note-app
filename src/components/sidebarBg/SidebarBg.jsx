@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ColorPalette from "../icon/ColorPalette";
-import Color from "../../dataColor/Color";
+import ColorPalette from "../../assets/icon/ColorPalette";
+import { COLOR_SIDEBAR } from "../../utils/constant/colorSidebar";
 import "./sidebarBg.css";
 
 const SidebarBg = ({ bg, setBg }) => {
@@ -10,16 +10,15 @@ const SidebarBg = ({ bg, setBg }) => {
   };
 
   return (
-    <div className="w-100 d-flex flex-column position-relative">
+    <div className="d-flex flex-column position-relative">
       <span onClick={toggleOpen}>
         <ColorPalette width="30px" height="30px" fill="#71717a" />
       </span>
       <div
         className={`sidebar d-flex flex-column position-absolute bg-white rounded-2 p-3 ${
           open ? "d-flex" : "d-none"
-        }`}
-      >
-        {Color.map((e, index) => {
+        }`}>
+        {COLOR_SIDEBAR.map((e, index) => {
           return (
             <div className="d-flex" key={index}>
               <div
@@ -29,8 +28,7 @@ const SidebarBg = ({ bg, setBg }) => {
                   setOpen(false);
                 }}
                 className="box rounded-circle mx-2"
-                style={{ background: e.color }}
-              ></div>
+                style={{ background: e.color }}></div>
               <p className=" fw-bold">{e.text}</p>
             </div>
           );
