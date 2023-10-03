@@ -1,7 +1,0 @@
-.comments {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  break-inside: avoid;
-  word-wrap: break-word;
-  line-height: 1.5;
-}
