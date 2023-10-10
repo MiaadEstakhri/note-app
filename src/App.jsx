@@ -1,5 +1,6 @@
 import "./App.css";
 import AddNewNote from "./components/addNewNote/addNewNote";
+import NoteList from "./components/noteList/noteList";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
           <div className="col-5 d-flex justify-content-center align-items-center">
             <AddNewNote />
           </div>
-          <div className="col-7 ">b</div>
+          <div className="col-7 ">
+            <NoteList />
+          </div>
         </section>
       </div>
     </main>
