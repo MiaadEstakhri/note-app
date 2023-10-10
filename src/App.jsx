@@ -10,7 +10,7 @@ function App() {
           header
         </section>
         <section className="col-12 d-flex my-4 px-2 px-sm-3">
-          <div className="col-5 d-flex justify-content-center align-items-center">
+          <div className="col-5 d-flex justify-content-center ">
             <AddNewNote />
           </div>
           <div className="col-7 ">
