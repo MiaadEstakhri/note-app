@@ -2,6 +2,11 @@
     background: #dbeafe;
 }
 
+.note-header {
+    border-bottom: 1px solid #1725543b;
+    background: #172554;
+}
+
 .btn-note {
     background: #172554;
 }
