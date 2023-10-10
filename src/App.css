@@ -1,3 +1,7 @@
+ul {
+    max-height: 500px;
+}
+
 .note-container {
     background: #dbeafe;
 }
