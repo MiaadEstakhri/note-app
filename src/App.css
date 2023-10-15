@@ -23,3 +23,7 @@ ul {
 .title-note {
     color: #172554 !important;
 }
+
+input[type="checkbox"] {
+    accent-color: #172554;
+}
