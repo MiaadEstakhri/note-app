@@ -4,7 +4,7 @@ import AddNewNote from "./components/addNewNote/addNewNote";
 import NoteList from "./components/noteList/noteList";
 
 function App() {
-  const [note, setNote] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   return (
     <main className="w-100 min-vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -14,10 +14,10 @@ function App() {
         </section>
         <section className="col-12 d-flex my-4 px-2 px-sm-3">
           <div className="col-5 d-flex justify-content-center ">
-            <AddNewNote setNote={setNote} />
+            <AddNewNote setNotes={setNotes} />
           </div>
           <div className="col-7 ">
-            <NoteList note={note} />
+            <NoteList notes={notes} />
           </div>
         </section>
       </div>

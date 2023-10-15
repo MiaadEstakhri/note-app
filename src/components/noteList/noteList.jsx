@@ -1,9 +1,9 @@
 import React from "react";
 
-const NoteList = ({ note }) => {
+const NoteList = ({ notes }) => {
   return (
     <ul className="w-100 overflow-auto px-3">
-      {note.map((item) => {
+      {notes.map((item) => {
         return (
           <li
             className="w-100 input-note py-2  px-3 rounded-3 shadow-sm mb-3"
