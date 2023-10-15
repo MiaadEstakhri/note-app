@@ -30,6 +30,7 @@ const AddNewNote = ({ setNotes }) => {
           onChange={(event) => setTitle(event.target.value)}
           placeholder="title note"
           className="col-11 col-md-12  border-0 rounded-3 py-2 px-3 fw-bolder input-note shadow-sm"
+          required
         />
         <textarea
           value={description}
@@ -37,7 +38,8 @@ const AddNewNote = ({ setNotes }) => {
           placeholder="title note"
           rows="4"
           cols="30"
-          className="col-11 col-md-12 border-0 rounded-3 py-2 px-3 mt-3 fw-bolder input-note text-break shadow-sm"
+          required
+          className="col-11  col-md-12 border-0 rounded-3 py-2 px-3 mt-3 fw-bolder input-note text-break shadow-sm"
         />
         <button
           type="submit"
