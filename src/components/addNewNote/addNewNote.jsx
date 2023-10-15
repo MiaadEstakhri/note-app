@@ -5,10 +5,11 @@ const AddNewNote = ({ setNotes }) => {
   const [description, setDescription] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!title && !description) return null;
     const newNote = {
       title,
       description,
-      Complete: false,
+      Completed: false,
       id: Date.now(),
       createAt: new Date().toISOString(),
     };
