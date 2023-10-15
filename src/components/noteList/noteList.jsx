@@ -23,7 +23,7 @@ const NoteList = ({ notes }) => {
                 <button className="border-0 bg-transparent">🗑️</button>
               </div>
             </div>
-            <div className="border m-2 mt-3"></div>
+            <div className="border m-2 "></div>
             <div className="w-100 text-center text-muted my-1">
               {new Date(item.createAt).toLocaleDateString("en-US", {
                 year: "numeric",
