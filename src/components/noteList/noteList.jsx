@@ -24,7 +24,7 @@ const NoteList = ({ notes }) => {
               </div>
             </div>
             <div className="border m-2 "></div>
-            <div className="w-100 text-center text-muted my-1">
+            <div className="w-100 text-center text-black-50 my-1">
               {new Date(item.createAt).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
