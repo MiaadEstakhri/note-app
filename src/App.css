@@ -4,6 +4,7 @@ ul {
 
 .note-container {
     background: #dbeafe;
+    min-height: 70vh;
 }
 
 .note-header {
@@ -17,4 +18,8 @@ ul {
 
 .input-note {
     background: #eff6ff;
+}
+
+.title-note {
+    color: #172554 !important;
 }
