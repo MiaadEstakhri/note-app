@@ -8,9 +8,9 @@ const NoteList = ({ notes }) => {
           <li
             className="w-100 input-note py-2  px-3 rounded-3 shadow-sm mb-3"
             key={item.id}>
-            <h5 className="text-capitalize">{item.title}</h5>
+            <h5 className="text-capitalize fw-bold">{item.title}</h5>
             <div className="w-100 d-flex justify-content-between">
-              <span className="text-break text-capitalize">
+              <span className="text-break text-capitalize text-muted">
                 {item.description}
               </span>
               <div className="d-flex align-items-end  justify-content-center">
@@ -22,6 +22,14 @@ const NoteList = ({ notes }) => {
                 />
                 <button className="border-0 bg-transparent">🗑️</button>
               </div>
+            </div>
+            <div className="border m-2 mt-3"></div>
+            <div className="w-100 text-center text-muted my-1">
+              {new Date(item.createAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </div>
           </li>
         );
