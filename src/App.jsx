@@ -6,6 +6,10 @@ import NoteList from "./components/noteList/noteList";
 function App() {
   const [notes, setNotes] = useState([]);
 
+  const handleAddNote = (newNote) => {
+    setNotes((prevNote) => [...prevNote, newNote]);
+  };
+
   const handleCompleteNote = (event) => {
     const noteId = Number(event.target.value);
     const newNotes = notes.map((note) =>
@@ -22,7 +26,7 @@ function App() {
         </section>
         <section className="col-12 d-flex my-4 px-2 px-sm-3">
           <div className="col-5 d-flex justify-content-center ">
-            <AddNewNote setNotes={setNotes} />
+            <AddNewNote onAddNote={handleAddNote} />
           </div>
           <div className="col-7 ">
             <NoteList notes={notes} onCompleted={handleCompleteNote} />
