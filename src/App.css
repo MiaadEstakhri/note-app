@@ -1,29 +1,33 @@
 ul {
-    max-height: 500px;
+  max-height: 500px;
 }
 
 .note-container {
-    background: #dbeafe;
-    min-height: 70vh;
+  background: #dbeafe;
+  min-height: 70vh;
 }
 
 .note-header {
-    border-bottom: 1px solid #1725543b;
-    background: #172554;
+  border-bottom: 1px solid #1725543b;
+  background: #172554;
 }
 
 .btn-note {
-    background: #172554;
+  background: #172554;
 }
 
 .input-note {
-    background: #eff6ff;
+  background: #eff6ff;
 }
 
 .title-note {
-    color: #172554 !important;
+  color: #172554 !important;
 }
 
 input[type="checkbox"] {
-    accent-color: #172554;
+  accent-color: #172554;
+}
+
+textarea {
+  resize: none !important;
 }
