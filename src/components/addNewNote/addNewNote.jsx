@@ -9,7 +9,7 @@ const AddNewNote = ({ setNotes }) => {
     const newNote = {
       title,
       description,
-      Completed: false,
+      completed: false,
       id: Date.now(),
       createAt: new Date().toISOString(),
     };
