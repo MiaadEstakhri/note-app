@@ -30,11 +30,11 @@ function App() {
         <section className="col-12 text-center note-header rounded-top-4 text-white fw-bold py-4 mb-3">
           header
         </section>
-        <section className="col-12 d-flex my-4 px-2 px-sm-3">
-          <div className="col-5 d-flex justify-content-center ">
+        <section className="col-12 d-flex flex-column flex-md-row my-4 px-2 px-md-3">
+          <div className="col-12 col-md-5 d-flex justify-content-center ">
             <AddNewNote onAddNote={handleAddNote} />
           </div>
-          <div className="col-7 ">
+          <div className="col-12 col-md-7 mt-4 mt-md-0">
             <NoteStatus notes={notes} />
             <NoteList
               notes={notes}
