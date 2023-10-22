@@ -18,6 +18,11 @@ function App() {
     setNotes(newNotes);
   };
 
+  const handleDelete = (id) => {
+    const removeNote = notes.filter((note) => note.id !== id);
+    setNotes(removeNote);
+  };
+
   return (
     <main className="w-100 min-vh-100 d-flex flex-column justify-content-center align-items-center">
       <div className="col-11 col-xl-9   d-flex flex-column  rounded-4 shadow-lg note-container ">
@@ -29,7 +34,11 @@ function App() {
             <AddNewNote onAddNote={handleAddNote} />
           </div>
           <div className="col-7 ">
-            <NoteList notes={notes} onCompleted={handleCompleteNote} />
+            <NoteList
+              notes={notes}
+              onCompleted={handleCompleteNote}
+              onDelete={handleDelete}
+            />
           </div>
         </section>
       </div>
