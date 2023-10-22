@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AddNewNote from "./components/addNewNote/addNewNote";
 import NoteList from "./components/noteList/noteList";
+import NoteStatus from "./components/noteStatus/noteStatus";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -30,6 +31,7 @@ function App() {
           header
         </section>
         <section className="col-12 d-flex my-4 px-2 px-sm-3">
+          <NoteStatus notes={notes} />
           <div className="col-5 d-flex justify-content-center ">
             <AddNewNote onAddNote={handleAddNote} />
           </div>
