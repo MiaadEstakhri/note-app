@@ -31,11 +31,11 @@ function App() {
           header
         </section>
         <section className="col-12 d-flex my-4 px-2 px-sm-3">
-          <NoteStatus notes={notes} />
           <div className="col-5 d-flex justify-content-center ">
             <AddNewNote onAddNote={handleAddNote} />
           </div>
           <div className="col-7 ">
+            <NoteStatus notes={notes} />
             <NoteList
               notes={notes}
               onCompleted={handleCompleteNote}
