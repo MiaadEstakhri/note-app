@@ -1,6 +1,6 @@
 import React from "react";
 
-const NoteList = ({ notes, onCompleted }) => {
+const NoteList = ({ notes, onCompleted, onDelete }) => {
   return (
     <ul className="w-100 overflow-auto px-3">
       {notes.map((item) => {
@@ -30,7 +30,11 @@ const NoteList = ({ notes, onCompleted }) => {
                   onChange={onCompleted}
                   className="mb-1 me-2 ms-3"
                 />
-                <button className="border-0 bg-transparent">🗑️</button>
+                <button
+                  className="border-0 bg-transparent"
+                  onClick={() => onDelete(item.id)}>
+                  🗑️
+                </button>
               </div>
             </div>
             <div className="border m-2 "></div>
