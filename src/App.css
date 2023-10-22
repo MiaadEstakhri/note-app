@@ -25,6 +25,11 @@ ul {
     color: #172554 !important;
 }
 
+
+/* .not-notes{
+  font-size: ;
+} */
+
 input[type="checkbox"] {
     accent-color: #172554;
 }
@@ -34,8 +39,13 @@ textarea {
 }
 
 .item-noteStatus {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background: #172554b1;
     color: #eff6ff;
+    font-size: 0.8rem;
+}
+
+.title-item__note {
+    font-size: 0.9rem;
 }
