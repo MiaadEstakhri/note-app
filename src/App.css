@@ -49,3 +49,7 @@ textarea {
 .title-item__note {
     font-size: 0.9rem;
 }
+
+h1 {
+    font-size: 1.9rem !important;
+}
