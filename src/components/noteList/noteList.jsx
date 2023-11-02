@@ -1,4 +1,5 @@
 import React from "react";
+import TrashIcon from "../../assets/icons/trashIcon";
 
 const NoteList = ({ notes, onCompleted, onDelete }) => {
   return (
@@ -31,9 +32,9 @@ const NoteList = ({ notes, onCompleted, onDelete }) => {
                   className="mb-1 me-2 ms-3"
                 />
                 <button
-                  className="border-0 bg-transparent"
+                  className="border-0 bg-transparent "
                   onClick={() => onDelete(item.id)}>
-                  🗑️
+                  <TrashIcon color="#DC2626" size={20} />
                 </button>
               </div>
             </div>
