@@ -48,7 +48,11 @@ function App() {
     <main className="w-100 min-vh-100 d-flex flex-column justify-content-center align-items-center">
       <div className="col-11 col-xl-9   d-flex flex-column  rounded-4 shadow-lg note-container ">
         <section className="col-12 d-flex justify-content-center align-items-center text-center note-header rounded-top-4 text-white  py-4 mb-3">
-          <NoteHeader notes={notes} onSort={clickSortHandler} />
+          <NoteHeader
+            notes={notes}
+            onSort={clickSortHandler}
+            selected={sortBy}
+          />
         </section>
         <section className="col-12 d-flex flex-column flex-md-row my-4 px-2 px-md-3">
           <div className="col-12 col-md-5 d-flex justify-content-center ">
