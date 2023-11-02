@@ -1,5 +1,21 @@
-ul {
+.dropDown ul {
     max-height: 500px;
+    background: #eff6ff;
+    color: #172554;
+}
+
+.dropDown ul li {
+    cursor: pointer;
+}
+
+.dropDown .dropDown__container {
+    background: #dbeafe;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.dropDown input {
+    color: #172554;
 }
 
 .note-container {
