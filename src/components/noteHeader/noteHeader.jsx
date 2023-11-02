@@ -5,12 +5,17 @@ const data = [
   { title: "Sort based on completed notes", value: "completed" },
 ];
 
-const NoteHeader = ({ notes, onSort }) => {
+const NoteHeader = ({ notes, onSort, selected }) => {
   return (
     <div className="col-12 d-flex justify-content-center align-items-center">
-      <h1 className="col-4 fw-bolder">My Notes( {notes.length} )</h1>
-      <div className="col-3 ">
-        <DropDown data={data} onClick={onSort} placeholder={"Sort..."} />
+      <h1 className="col-5 fw-bolder ">My Notes( {notes.length} )</h1>
+      <div className="col-3">
+        <DropDown
+          data={data}
+          onClick={onSort}
+          placeholder={"Sort..."}
+          selected={selected}
+        />
       </div>
     </div>
   );
