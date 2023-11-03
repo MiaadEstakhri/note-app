@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import NewComment from "./../../components/newComment/NewComment";
-import NavList from "../../common/navList/NavList";
+import NavList from "../../components/navList/NavList";
 import Comment from "../../components/comment/Comment";
 import { COMMENT_LIST } from "../../utils/constant/navlist";
 
