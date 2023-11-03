@@ -56,23 +56,7 @@ const Discussion = () => {
 
   return (
     <main className="w-100">
-      <nav className="d-flex justify-content-end align-items-center py-2">
-        <ul className="d-flex gap-3 fw-bold m-3">
-          {COMMENT_LIST.map((note, index) => {
-            return (
-              <NavList
-                key={index}
-                title={note.title}
-                bg={note.bg}
-                onClick={() => handleFilterTasks(note.bg)}
-              />
-            );
-          })}
-        </ul>
-        <span className="d-flex justify-content-center align-items-center border  rounded-circle bg-white fw-bold me-3">
-          {filterComments.length}
-        </span>
-      </nav>
+      <NavList onClick={handleFilterTasks} comments={comments} />
       <section className="mx-3 mt-3">
         <div className="">
           <NewComment
