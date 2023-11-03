@@ -26,3 +26,7 @@ nav span {
 .title {
     font-size: 1.2rem;
 }
+
+textarea {
+    resize: none !important;
+}
