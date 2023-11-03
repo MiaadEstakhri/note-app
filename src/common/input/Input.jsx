@@ -6,6 +6,7 @@ const Input = ({ title, onChange, value }) => {
       className="w-100 p-1 my-2 border-0 bg-transparent fw-bold"
       onChange={onChange}
       value={value}
+      required
     />
   );
 };

@@ -1,4 +1,4 @@
-const Textarea = ({onChange,value}) => {
+const Textarea = ({ onChange, value }) => {
   return (
     <textarea
       className="w-100 p-1 my-2 border-0 bg-transparent"
@@ -7,7 +7,7 @@ const Textarea = ({onChange,value}) => {
       cols=""
       onChange={onChange}
       value={value}
-    ></textarea>
+      required></textarea>
   );
 };
 
