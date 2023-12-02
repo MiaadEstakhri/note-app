@@ -8,7 +8,7 @@ const Comment = ({ bg, title, des, onRemove, className }) => {
       <h3 className=" title fw-bold">{title}</h3>
 
       <p className="">{des}</p>
-      <div className="w-100 d-flex justify-content-end bg-transparent">
+      <div className="w-100 h-100 d-flex justify-content-end bg-transparent">
         <button onClick={onRemove} className="bg-transparent border-0">
           <Delete width="20px" height="20px" fill="#71717a" />
         </button>

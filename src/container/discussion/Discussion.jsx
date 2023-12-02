@@ -55,7 +55,7 @@ const Discussion = () => {
   };
 
   return (
-    <main className="w-100">
+    <main className="w-100 h-100">
       <NavList onClick={handleFilterTasks} comments={comments} />
       <section className="mx-3 mt-3">
         <div className="">
@@ -66,13 +66,13 @@ const Discussion = () => {
           />
         </div>
 
-        <div className="w-100 mt-4 ">
+        <div className="w-100 h-100 mt-4 ">
           {(comments.length === 0 || filterComments.length === 0) && (
             <div className="w-100 not-comment d-flex justify-content-center  align-items-center my-3">
               <h4 className="text-center">Not Comment</h4>
             </div>
           )}
-          <div className="w-100 d-flex flex-wrap justify-content-between gap-2 box-comments">
+          <div className="w-100   box-comments">
             {filterComments.map((note) => {
               return (
                 <Comment
