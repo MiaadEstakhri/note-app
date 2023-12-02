@@ -10,7 +10,7 @@ const NavList = ({ onClick, comments }) => {
     { title: "Done", bg: "#bbf7d0", count: doneCount },
   ];
   return (
-    <nav className="d-flex justify-content-end align-items-center py-2">
+    <nav className="d-flex justify-content-center align-items-center py-2">
       <ul className="d-flex gap-3 fw-bold m-3">
         {COMMENT_LIST.map((item, index) => {
           return (
