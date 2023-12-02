@@ -1,38 +1,39 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }
 
 .comment {
-  break-inside: avoid;
-  max-width: 20rem;
+    break-inside: avoid;
+    max-width: 20rem;
 }
 
 .not-comment {
-  height: 50vh;
+    height: 50vh;
 }
 
 nav {
-  background-color: #facc15d7;
+    background-color: #facc15d7;
 }
 
 li span,
 nav span {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .title {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 textarea {
-  resize: none !important;
+    resize: none !important;
+    scrollbar-width: none;
 }
 
 .box-comments {
-  column-count: 5;
-  column-gap: 1rem;
+    column-count: 5;
+    /* column-gap: 1rem; */
 }

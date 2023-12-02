@@ -29,21 +29,19 @@ const NewComment = ({ onAddNote }) => {
   };
 
   return (
-    <div className="d-flex flex-column align-items-end ">
-      <form
-        onSubmit={submitHandler}
-        className={`new-comment d-flex flex-column justify-content-center align-items-center p-3 shadow rounded-3 `}
-        style={{ background: bg ? bg : "#fee2e2" }}>
-        <Input onChange={inputHandler} value={input} />
-        <Textarea onChange={areaHandler} value={textarea} />
-        <div className="w-100 d-flex  justify-content-end">
-          <SidebarBg bg={bg} setBg={setBg} />
-          <button className="border-0 bg-transparent mx-4 ">
-            <SaveIcon width="30px" height="30px" fill="#71717a" />
-          </button>
-        </div>
-      </form>
-    </div>
+    <form
+      onSubmit={submitHandler}
+      className={`new-comment d-flex flex-column justify-content-center align-items-center p-3 shadow rounded-3 `}
+      style={{ background: bg ? bg : "#fee2e2" }}>
+      <Input onChange={inputHandler} value={input} />
+      <Textarea onChange={areaHandler} value={textarea} />
+      <div className="w-100 d-flex  justify-content-end">
+        <SidebarBg bg={bg} setBg={setBg} />
+        <button className="border-0 bg-transparent mx-4 ">
+          <SaveIcon width="30px" height="30px" fill="#71717a" />
+        </button>
+      </div>
+    </form>
   );
 };
 

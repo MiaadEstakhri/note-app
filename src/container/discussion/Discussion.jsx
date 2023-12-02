@@ -58,8 +58,8 @@ const Discussion = () => {
     <main className="w-100 h-100">
       <h1 className="bg-light text-center fw-bold h3 py-3 m-0">Note List</h1>
       <NavList onClick={handleFilterTasks} comments={comments} />
-      <section className="mx-3 mt-3">
-        <div className="">
+      <section className="container-fluid w-100  mt-3">
+        <div className="w-100 d-flex justify-content-center">
           <NewComment
             onAddNote={handleAddNewNote}
             comments={comments}

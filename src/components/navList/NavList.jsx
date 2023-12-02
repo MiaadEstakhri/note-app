@@ -15,7 +15,7 @@ const NavList = ({ onClick, comments }) => {
         {COMMENT_LIST.map((item, index) => {
           return (
             <li
-              className="d-flex align-items-center justify-content-center ms-3"
+              className="d-flex align-items-center justify-content-center me-3"
               key={index}
               onClick={() => onClick(item.bg)}>
               {item.title}
