@@ -45,6 +45,17 @@ const Discussion = () => {
     setFilterComments(removeFilterComments);
   };
 
+  const handleUpdate = (id, newTitle, newDes) => {
+    const updatedComments = comments.map((comment) =>
+      comment.id === id ? { ...comment, title: newTitle, des: newDes } : comment
+    );
+    const updatedFilterComments = filterComments.map((comment) =>
+      comment.id === id ? { ...comment, title: newTitle, des: newDes } : comment
+    );
+    setComments(updatedComments);
+    setFilterComments(updatedFilterComments);
+  };
+
   const handleFilterTasks = (bg) => {
     if (bg === "#333") {
       setFilterComments(comments);
@@ -82,6 +93,9 @@ const Discussion = () => {
                   des={note.des}
                   bg={note.bg}
                   onRemove={() => handleRemove(note.id)}
+                  onUpdate={(newTitle, newDes) =>
+                    handleUpdate(note.id, newTitle, newDes)
+                  }
                   className="comment"
                 />
               );
