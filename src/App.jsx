@@ -1,29 +1,54 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import "./App.css";
 import AddNewNote from "./components/addNewNote/addNewNote";
 import NoteList from "./components/noteList/noteList";
 import NoteStatus from "./components/noteStatus/noteStatus";
 import NoteHeader from "./components/noteHeader/noteHeader";
 
+function notesReducer(notes, action) {
+  switch (action.type) {
+    case "addNote": {
+      return [...notes, action.payload];
+    }
+    case "deleted": {
+      return notes.filter((note) => note.id !== action.payload);
+    }
+    case "completeNote": {
+      return notes.map((note) =>
+        note.id === action.payload
+          ? { ...note, completed: !note.completed }
+          : note
+      );
+    }
+
+    default:
+      throw new Error("unknown error", action.type);
+  }
+}
+
 function App() {
-  const [notes, setNotes] = useState([]);
+  // const [notes, setNotes] = useState([]);
+  const [notes, dispatch] = useReducer(notesReducer, []);
   const [sortBy, setSortBy] = useState("latest");
 
   const handleAddNote = (newNote) => {
-    setNotes((prevNote) => [...prevNote, newNote]);
+    // setNotes((prevNote) => [...prevNote, newNote]);
+    dispatch({ type: "addNote", payload: newNote });
   };
 
   const handleCompleteNote = (event) => {
     const noteId = Number(event.target.value);
-    const newNotes = notes.map((note) =>
-      note.id === noteId ? { ...note, completed: !note.completed } : note
-    );
-    setNotes(newNotes);
+    // const newNotes = notes.map((note) =>
+    //   note.id === noteId ? { ...note, completed: !note.completed } : note
+    // );
+    // setNotes(newNotes);
+    dispatch({ type: "completeNote", payload: noteId });
   };
 
   const handleDelete = (id) => {
-    const removeNote = notes.filter((note) => note.id !== id);
-    setNotes(removeNote);
+    // const removeNote = notes.filter((note) => note.id !== id);
+    // setNotes(removeNote);
+    dispatch({ type: "deleted", payload: id });
   };
 
   const clickSortHandler = (item) => {
