@@ -1,6 +1,6 @@
 import React from "react";
-import TrashIcon from "../../assets/icons/trashIcon";
 import { useNotes, useNotesDispatch } from "../context/notesContext";
+import TrashIcon from "../../assets/icons/trashIcon";
 
 const NoteList = ({ sortBy }) => {
   const dispatch = useNotesDispatch();

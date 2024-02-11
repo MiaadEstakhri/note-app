@@ -1,5 +1,6 @@
-import DropDown from "../common/dropDown/dropDown";
 import { useNotes } from "../context/notesContext";
+import DropDown from "../common/dropDown/dropDown";
+
 const data = [
   { title: "Sort based on latest notes", value: "latest" },
   { title: "Sort based on earliest notes", value: "earliest" },
