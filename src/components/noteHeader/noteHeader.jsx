@@ -1,11 +1,13 @@
 import DropDown from "../common/dropDown/dropDown";
+import { useNotes } from "../context/notesContext";
 const data = [
   { title: "Sort based on latest notes", value: "latest" },
   { title: "Sort based on earliest notes", value: "earliest" },
   { title: "Sort based on completed notes", value: "completed" },
 ];
 
-const NoteHeader = ({ notes, onSort, selected }) => {
+const NoteHeader = ({ onSort, selected }) => {
+  const notes = useNotes();
   return (
     <div className="col-12 d-flex justify-content-center align-items-center">
       <h1 className="col-5 fw-bolder ">My Notes( {notes.length} )</h1>

@@ -1,46 +1,69 @@
 import React from "react";
 import TrashIcon from "../../assets/icons/trashIcon";
+import { useNotes, useNotesDispatch } from "../context/notesContext";
 
-const NoteList = ({ notes, onCompleted, onDelete }) => {
+const NoteList = ({ sortBy }) => {
+  const dispatch = useNotesDispatch();
+  const notes = useNotes();
+
+  let sortedNotes = notes;
+  if (sortBy === "earliest")
+    sortedNotes = [...notes].sort(
+      (a, b) => new Date(a.createAt) - new Date(b.createAt)
+    );
+  if (sortBy === "latest")
+    sortedNotes = [...notes].sort(
+      (a, b) => new Date(b.createAt) - new Date(a.createAt)
+    );
+  if (sortBy === "completed")
+    sortedNotes = [...notes].sort(
+      (a, b) => Number(a.completed) - Number(b.completed)
+    );
+
   return (
     <ul className="w-100 overflow-auto px-3">
-      {notes.map((item) => {
+      {sortedNotes.map(({ id, title, description, completed, createAt }) => {
         return (
           <li
             className={`w-100 input-note py-2  px-3 rounded-3 shadow-sm mb-3  ${
-              item.completed ? "opacity-75 " : ""
+              completed ? "opacity-75 " : ""
             }`}
-            key={item.id}>
+            key={id}>
             <h5
               className={`text-capitalize fw-bold ${
-                item.completed ? "text-decoration-line-through" : ""
+                completed ? "text-decoration-line-through" : ""
               }`}>
-              {item.title}
+              {title}
             </h5>
             <div className="w-100 d-flex justify-content-between ">
               <span className="text-break text-capitalize text-muted">
-                {item.description}
+                {description}
               </span>
               <div className="d-flex align-items-end  justify-content-center">
                 <input
                   type="checkbox"
-                  name={item.id}
-                  id={item.id}
-                  value={item.id}
-                  checked={item.completed}
-                  onChange={onCompleted}
+                  name={id}
+                  id={id}
+                  value={id}
+                  checked={completed}
+                  onChange={(event) => {
+                    const noteId = Number(event.target.value);
+                    dispatch({ type: "completeNote", payload: noteId });
+                  }}
                   className="mb-1 me-2 ms-3"
                 />
                 <button
                   className="border-0 bg-transparent "
-                  onClick={() => onDelete(item.id)}>
+                  onClick={() => {
+                    dispatch({ type: "deleted", payload: id });
+                  }}>
                   <TrashIcon color="#DC2626" size={20} />
                 </button>
               </div>
             </div>
             <div className="border m-2 "></div>
             <div className="w-100 text-center text-black-50 my-1 date-note">
-              {new Date(item.createAt).toLocaleDateString("en-US", {
+              {new Date(createAt).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
